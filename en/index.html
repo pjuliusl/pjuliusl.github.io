@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pedro Julius · AI and data engineer</title>
-<meta name="description" content="Pedro Julius Lemos dos Santos, AI and data engineer in Fortaleza, Brazil. I train and evaluate models, connect assistants to Superset and maintain Airflow and dbt pipelines.">
-<meta property="og:title" content="Pedro Julius · AI and data engineer">
-<meta property="og:description" content="I train and evaluate AI models and maintain data pipelines in production.">
+<title>Pedro Julius · AI Engineer</title>
+<meta name="description" content="Pedro Julius Lemos dos Santos, AI Engineer in Fortaleza, Brazil. I train, evaluate and deploy AI solutions to production.">
+<meta property="og:title" content="Pedro Julius · AI Engineer">
+<meta property="og:description" content="I train, evaluate and deploy AI solutions to production.">
 <meta property="og:url" content="https://pedrojulius.tech/en/">
 <meta property="og:locale" content="en_US">
 <link rel="canonical" href="https://pedrojulius.tech/en/">
@@ -53,8 +53,8 @@
 <section class="hero">
   <div class="hero-text">
     <p class="meta">Fortaleza, Brazil</p>
-    <h1>I train AI models and keep data pipelines running in production</h1>
-    <p class="lead">I work as a data analyst for the Civil Police of Ceará, in Brazil. I train and evaluate decision models, connect AI assistants to Apache Superset and maintain the Airflow and dbt DAGs that move data between the agency's databases.</p>
+    <h1>Pedro Julius<span class="role">AI Engineer</span></h1>
+    <p class="lead">I train, evaluate and deploy AI solutions to production</p>
     <div class="cta">
       <a class="btn primary" href="#projects">See projects</a>
       <a class="btn" href="../Pedro-Julius-CV-EN.pdf" download>
@@ -64,23 +64,28 @@
     </div>
   </div>
 
-  <figure class="run" aria-label="Steps from data to a deployed model">
-    <div class="run-head">
-      <span class="dot"></span>
-      <span class="mono">decision-model · from data to deploy</span>
-    </div>
-    <ol class="steps">
-      <li><span class="mono n">01</span><div><b>Split by record</b><span>One case never lands in both training and test</span></div><span class="ok mono">ok</span></li>
-      <li><span class="mono n">02</span><div><b>LoRA fine-tuning on GPU</b><span>Kubernetes Jobs with checkpoints and resume</span></div><span class="ok mono">ok</span></li>
-      <li><span class="mono n">03</span><div><b>Independent evaluation</b><span>Severe errors counted apart, logged in MLflow</span></div><span class="ok mono">ok</span></li>
-      <li><span class="mono n">04</span><div><b>Blind human review</b><span>Analysts judge without knowing who answered</span></div><span class="ok mono">ok</span></li>
-      <li class="now"><span class="mono n">05</span><div><b>Training × serving parity</b><span>The served model answers like the evaluated one</span></div><span class="ok mono">before deploy</span></li>
-    </ol>
+  <figure class="eval" aria-label="Sketch of checkpoint evaluation, no real data">
+    <div class="eval-head mono"><span>evaluation by checkpoint</span><span class="note">sketch, no real data</span></div>
+    <svg viewBox="0 0 560 304" role="img" aria-label="Sketch of checkpoint evaluation, no real data">
+      <text x="24" y="16">validation score</text>
+      <path class="gl" d="M24 72H536M24 136H536M24 200H536"/>
+      <path class="ax" d="M24 264H536"/>
+      <path class="base" d="M24 184H536"/>
+      <path class="pick-l" d="M360 84V264"/>
+      <path class="ft" d="M24 244C60 220 96 170 144 140S240 96 296 86 336 78 360 78 440 86 480 96 520 108 536 112"/>
+      <circle class="pick" cx="360" cy="78" r="6"/>
+      <text class="tick" x="72" y="292" text-anchor="middle">step-0400</text><text class="tick alt" x="168" y="292" text-anchor="middle">step-0800</text><text class="tick" x="264" y="292" text-anchor="middle">step-1200</text><text class="tick pick-t" x="360" y="292" text-anchor="middle">step-1600</text><text class="tick alt" x="456" y="292" text-anchor="middle">step-2000</text>
+    </svg>
+    <ul class="legend mono">
+      <li><i class="sw"></i>fine-tuned</li>
+      <li><i class="sw base"></i>base model</li>
+      <li><i class="ck"></i>selected checkpoint</li>
+    </ul>
   </figure>
 </section>
 
 <section id="about" class="split">
-  <h2>About</h2>
+  <div class="sec-h"><p class="step mono"><i class="ck"></i>step-01</p><h2>About</h2></div>
   <div>
     <p>I'm Pedro Julius, based in Fortaleza, Brazil. Since July 2025 I've worked on data and AI as a contractor at the IT department of the Civil Police of Ceará.</p>
     <p>I got into tech through the integrated technical program in computing at IFCE, which I finished in 2022. After that I did IT support in a public school's computer lab, prepared hands-on Android and Kotlin lessons for beginners, and wrote technical documentation for projects at iREDE. I'm now studying Telecommunications Engineering at IFCE, expected to finish in 2028.</p>
@@ -97,55 +102,63 @@
 </section>
 
 <section id="projects">
-  <h2>Projects</h2>
+  <div class="sec-h"><p class="step mono"><i class="ck"></i>step-02</p><h2>Projects</h2></div>
   <div class="grid">
     <article class="card lead-card">
       <p class="mono kind">ai / mlops</p>
       <h3>Fine-tuning and evaluating decision models</h3>
       <p class="desc">I built the LoRA fine-tuning pipeline for a model that sorts records into four categories. I group the splits by record, so the same case can't show up in both training and test. Training runs as a GPU Job on Kubernetes with checkpoints and resume, and MLflow stores parameters and metrics. I pick the checkpoint by its severe-error limit, and at export I compare training outputs with serving outputs before I release the version.</p>
       <p class="mono stack">PyTorch · Transformers · PEFT · MLflow · K3s</p>
+    <ol class="ckpts"><li><i class="ck"></i><span>Split by record</span></li><li><i class="ck"></i><span>LoRA fine-tuning</span></li><li><i class="ck"></i><span>Independent evaluation</span></li><li><i class="ck"></i><span>Blind human review</span></li><li><i class="ck"></i><span>Training × serving parity</span></li></ol>
     </article>
-    <article class="card">
+    <article class="card c7">
       <p class="mono kind">ai / integration</p>
       <h3>MCP analytics assistant in Apache Superset</h3>
+      <ol class="flow mono"><li>dashboard</li><li>MCP Client</li><li>MCP Host</li><li>tools</li></ol>
       <p>I wrote the Python MCP Host and Client that connect an assistant to Superset. The server checks JWT/JWKS tokens, scopes and the tool catalog. The chat opens inside the dashboard with CSRF protection, and each user and browser tab gets its own session and nonce in Redis/Sentinel.</p>
       <p class="mono stack">Python · MCP · Superset · Redis · Jenkins</p>
     </article>
-    <article class="card">
+    <article class="card c5">
       <p class="mono kind">ai / human evaluation</p>
       <h3>Human review platform for AI answers</h3>
+      <ol class="flow mono"><li>queue</li><li>blind review</li><li>rationale</li><li>metrics</li></ol>
       <p>Analysts review answers without knowing whether a model or another analyst wrote them. The platform has a work queue, a written reason for each decision and a history of every review. Dashboards show agreement, severe errors, coverage and confidence. Login uses Argon2id and locks after repeated failed attempts.</p>
       <p class="mono stack">FastAPI · SQLAlchemy · PostgreSQL · Alembic</p>
     </article>
-    <article class="card">
+    <article class="card c5">
       <p class="mono kind">ai / conversation</p>
       <h3>Assistant for filing police reports</h3>
+      <ol class="flow mono"><li>report</li><li>rules engine</li><li>LLM</li><li>narrative</li></ol>
       <p>A rules engine checks what the report still lacks and whether the case can be filed online. An LLM picks the next question and drafts the narrative, and the engine rejects facts the citizen didn't state. If the report points to immediate danger, the assistant tells the person to call 190, the police emergency line. On every commit, simulated citizens talk to the assistant and an evaluator compares the result with an answer key.</p>
       <p class="mono stack">FastAPI · LLM · LiteLLM · pytest</p>
     </article>
-    <article class="card">
+    <article class="card c7">
       <p class="mono kind">data / pipelines</p>
       <h3>Airflow and dbt pipelines in production</h3>
+      <ol class="flow mono"><li>source</li><li>Airflow</li><li>dbt</li><li>target</li></ol>
       <p>I maintain DAGs that replicate and publish data between databases in dependency order, with incremental capture, backfill of missing keys and parent rows written before child rows. I also extract metrics from semi-structured PDFs and compare the two sources month by month in Superset.</p>
       <p class="mono stack">Airflow · dbt · PostgreSQL · ClickHouse · Superset</p>
     </article>
-    <article class="card">
+    <article class="card c5">
       <p class="mono kind">devops / ci-cd</p>
       <h3>Continuous delivery on an existing pipeline</h3>
+      <ol class="flow mono"><li>Jenkins</li><li>Harbor</li><li>Semaphore</li><li>Docker Swarm</li></ol>
       <p>I ship my services through the CI/CD pipeline the team already runs. Jenkins builds and tests the image, Harbor stores the versions, Semaphore deploys to Docker Swarm and Portainer shows the state of each service. Secrets live in Vault, migrations run before the app and a health check verifies each rollout.</p>
       <p class="mono stack">Jenkins · Harbor · Semaphore · Docker Swarm · Portainer · Vault</p>
     </article>
-    <article class="card">
+    <article class="card c7">
       <p class="mono kind">ai / fork of an open source project</p>
       <h3>Chat Infinito, a fork of UniiChat</h3>
+      <ol class="flow mono"><li>chat</li><li>summaries</li><li>tree</li><li>exact search</li></ol>
       <p>UniiChat, by Victor Taelin, is a chat that never ends: it keeps the whole conversation in a tree of summaries and reopens old parts when it needs them. In my fork I replaced API keys with Claude and ChatGPT subscriptions, calling the official <code>claude</code> and <code>codex</code> clients. Codex writes the summaries in batches, and when one plan hits its limit another model takes over. I added exact search over the history, a rule that keeps links and numbers in the summaries and live subscription usage on screen.</p>
       <p class="mono stack">TypeScript · Bun · Claude Code · Codex CLI · MCP</p>
       <a class="link" href="https://github.com/VictorTaelin/uniichat" target="_blank" rel="noopener">Original UniiChat on GitHub
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </article>
-    <article class="card">
+    <article class="card c12">
       <p class="mono kind">bi / open source</p>
       <h3>Power BI analytics dashboard</h3>
+      <ol class="flow mono"><li>Northwind</li><li>PostgreSQL</li><li>Power BI</li></ol>
       <p>I built a Power BI dashboard on the Northwind sample database in PostgreSQL, covering sales, revenue by product, stock and average ticket.</p>
       <p class="mono stack">Power BI · PostgreSQL</p>
       <a class="link" href="https://github.com/pjuliusl/FirstReport" target="_blank" rel="noopener">Code on GitHub
@@ -155,7 +168,7 @@
 </section>
 
 <section id="experience" class="split">
-  <h2>Experience</h2>
+  <div class="sec-h"><p class="step mono"><i class="ck"></i>step-03</p><h2>Experience</h2></div>
   <div>
     <ol class="timeline">
       <li><span class="mono when">Jul 2025 – now</span><div><h3>Data Analyst · Civil Police of Ceará (IT department)</h3><p>Contractor. I maintain Airflow DAGs and dbt models in production, connect MCP assistants to Superset, and train, evaluate and run human review on AI models.</p></div></li>
@@ -174,7 +187,7 @@
 
 <section id="contact" class="contact">
   <div>
-    <h2>Contact</h2>
+    <div class="sec-h"><p class="step mono"><i class="ck"></i>step-04</p><h2>Contact</h2></div>
     <p>Write to me if you want to talk about applied AI, MLOps or data engineering.</p>
   </div>
   <div class="cta">

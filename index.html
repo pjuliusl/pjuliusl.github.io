@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pedro Julius · Engenheiro de IA e dados</title>
-<meta name="description" content="Pedro Julius Lemos dos Santos, engenheiro de IA e dados em Fortaleza. Treino e avalio modelos, integro assistentes ao Superset e mantenho pipelines Airflow e dbt.">
-<meta property="og:title" content="Pedro Julius · Engenheiro de IA e dados">
-<meta property="og:description" content="Treino e avalio modelos de IA e mantenho pipelines de dados em produção.">
+<title>Pedro Julius · AI Engineer</title>
+<meta name="description" content="Pedro Julius Lemos dos Santos, AI Engineer em Fortaleza. Treino, avalio e disponibilizo soluções com IA em produção.">
+<meta property="og:title" content="Pedro Julius · AI Engineer">
+<meta property="og:description" content="Treino, avalio e disponibilizo soluções com IA em produção.">
 <meta property="og:url" content="https://pedrojulius.tech/">
 <meta property="og:locale" content="pt_BR">
 <link rel="canonical" href="https://pedrojulius.tech/">
@@ -54,8 +54,8 @@
 <section class="hero">
   <div class="hero-text">
     <p class="meta">Fortaleza, Ceará</p>
-    <h1>Treino modelos de IA e mantenho pipelines de dados em produção</h1>
-    <p class="lead">Sou analista de dados na Polícia Civil do Ceará. Treino e avalio modelos de decisão, integro assistentes ao Superset e cuido das DAGs Airflow e dbt que publicam dados entre os bancos da instituição.</p>
+    <h1>Pedro Julius<span class="role">AI Engineer</span></h1>
+    <p class="lead">Treino, avalio e disponibilizo soluções com IA em produção</p>
     <div class="cta">
       <a class="btn primary" href="#projetos">Ver projetos</a>
       <a class="btn" href="Pedro-Julius-CV-PTBR.pdf" download>
@@ -65,23 +65,28 @@
     </div>
   </div>
 
-  <figure class="run" aria-label="Etapas de um modelo até o deploy">
-    <div class="run-head">
-      <span class="dot"></span>
-      <span class="mono">modelo-decisao · do dado ao deploy</span>
-    </div>
-    <ol class="steps">
-      <li><span class="mono n">01</span><div><b>Partição por registro</b><span>O mesmo caso não cai no treino e no teste</span></div><span class="ok mono">ok</span></li>
-      <li><span class="mono n">02</span><div><b>Fine-tuning LoRA em GPU</b><span>Jobs no Kubernetes com checkpoints e retomada</span></div><span class="ok mono">ok</span></li>
-      <li><span class="mono n">03</span><div><b>Avaliação independente</b><span>Erros graves medidos à parte, registrados no MLflow</span></div><span class="ok mono">ok</span></li>
-      <li><span class="mono n">04</span><div><b>Revisão humana cega</b><span>Analistas julgam sem saber quem respondeu</span></div><span class="ok mono">ok</span></li>
-      <li class="now"><span class="mono n">05</span><div><b>Paridade treino × inferência</b><span>O modelo servido responde igual ao avaliado</span></div><span class="ok mono">antes do deploy</span></li>
-    </ol>
+  <figure class="eval" aria-label="Esquema da avaliação por checkpoint, sem dados reais">
+    <div class="eval-head mono"><span>avaliação por checkpoint</span><span class="note">esquema, sem dados reais</span></div>
+    <svg viewBox="0 0 560 304" role="img" aria-label="Esquema da avaliação por checkpoint, sem dados reais">
+      <text x="24" y="16">acerto na validação</text>
+      <path class="gl" d="M24 72H536M24 136H536M24 200H536"/>
+      <path class="ax" d="M24 264H536"/>
+      <path class="base" d="M24 184H536"/>
+      <path class="pick-l" d="M360 84V264"/>
+      <path class="ft" d="M24 244C60 220 96 170 144 140S240 96 296 86 336 78 360 78 440 86 480 96 520 108 536 112"/>
+      <circle class="pick" cx="360" cy="78" r="6"/>
+      <text class="tick" x="72" y="292" text-anchor="middle">step-0400</text><text class="tick alt" x="168" y="292" text-anchor="middle">step-0800</text><text class="tick" x="264" y="292" text-anchor="middle">step-1200</text><text class="tick pick-t" x="360" y="292" text-anchor="middle">step-1600</text><text class="tick alt" x="456" y="292" text-anchor="middle">step-2000</text>
+    </svg>
+    <ul class="legend mono">
+      <li><i class="sw"></i>fine-tuned</li>
+      <li><i class="sw base"></i>modelo base</li>
+      <li><i class="ck"></i>checkpoint escolhido</li>
+    </ul>
   </figure>
 </section>
 
 <section id="sobre" class="split">
-  <h2>Sobre</h2>
+  <div class="sec-h"><p class="step mono"><i class="ck"></i>step-01</p><h2>Sobre</h2></div>
   <div>
     <p>Sou Pedro Julius, de Fortaleza. Desde julho de 2025 trabalho com dados e IA como analista terceirizado na Coordenadoria de Tecnologia e Informação da Polícia Civil do Ceará.</p>
     <p>Entrei na área pelo curso técnico integrado em informática do IFCE, concluído em 2022. Depois dei suporte na sala de informática de uma escola municipal, preparei aulas práticas de Android e Kotlin para iniciantes e escrevi a documentação técnica de projetos na iREDE. Hoje curso Engenharia de Telecomunicações no IFCE, com conclusão prevista para 2028.</p>
@@ -98,55 +103,63 @@
 </section>
 
 <section id="projetos">
-  <h2>Projetos</h2>
+  <div class="sec-h"><p class="step mono"><i class="ck"></i>step-02</p><h2>Projetos</h2></div>
   <div class="grid">
     <article class="card lead-card">
       <p class="mono kind">ia / mlops</p>
       <h3>Fine-tuning e avaliação de modelos de decisão</h3>
       <p class="desc">Montei o pipeline de fine-tuning LoRA de um modelo que classifica registros em quatro categorias. Agrupo as partições por registro para que o mesmo caso não apareça no treino e no teste. O treino roda como Job em GPU no Kubernetes, com checkpoints e retomada, e o MLflow guarda parâmetros e métricas. Escolho o checkpoint pelo limite de erros graves e, na exportação, comparo as respostas do treino com as da inferência antes de liberar a versão.</p>
       <p class="mono stack">PyTorch · Transformers · PEFT · MLflow · K3s</p>
+    <ol class="ckpts"><li><i class="ck"></i><span>Partição por registro</span></li><li><i class="ck"></i><span>Fine-tuning LoRA</span></li><li><i class="ck"></i><span>Avaliação independente</span></li><li><i class="ck"></i><span>Revisão humana cega</span></li><li><i class="ck"></i><span>Paridade treino × inferência</span></li></ol>
     </article>
-    <article class="card">
+    <article class="card c7">
       <p class="mono kind">ia / integração</p>
       <h3>Assistente analítico MCP no Apache Superset</h3>
+      <ol class="flow mono"><li>dashboard</li><li>MCP Client</li><li>MCP Host</li><li>ferramentas</li></ol>
       <p>Escrevi em Python o MCP Host e o Client que ligam um assistente ao Superset. O servidor confere tokens JWT/JWKS, escopos e o catálogo de ferramentas. O chat abre dentro do dashboard com proteção CSRF, e cada usuário e aba ganha sessão e nonce próprios no Redis/Sentinel.</p>
       <p class="mono stack">Python · MCP · Superset · Redis · Jenkins</p>
     </article>
-    <article class="card">
+    <article class="card c5">
       <p class="mono kind">ia / avaliação humana</p>
       <h3>Plataforma de revisão humana de respostas de IA</h3>
+      <ol class="flow mono"><li>fila</li><li>revisão cega</li><li>justificativa</li><li>métricas</li></ol>
       <p>Analistas revisam respostas sem saber se vieram do modelo ou de outro analista. A plataforma tem fila de trabalho, justificativa em cada decisão e histórico das revisões. Os painéis mostram concordância, erros graves, cobertura e confiança. O login usa Argon2id e trava depois de tentativas repetidas.</p>
       <p class="mono stack">FastAPI · SQLAlchemy · PostgreSQL · Alembic</p>
     </article>
-    <article class="card">
+    <article class="card c5">
       <p class="mono kind">ia / conversação</p>
       <h3>Assistente de registro de ocorrências</h3>
+      <ol class="flow mono"><li>relato</li><li>motor de regras</li><li>LLM</li><li>narrativa</li></ol>
       <p>Um motor de regras confere o que falta no relato e se o caso pode ser registrado pela internet. Um LLM escolhe a próxima pergunta e redige a narrativa, e o motor recusa fatos que o cidadão não contou. Se o relato indica risco imediato, o assistente orienta ligar para o 190. A cada commit, cidadãos simulados conversam com o assistente e um avaliador compara o resultado com o gabarito.</p>
       <p class="mono stack">FastAPI · LLM · LiteLLM · pytest</p>
     </article>
-    <article class="card">
+    <article class="card c7">
       <p class="mono kind">dados / pipelines</p>
       <h3>Pipelines Airflow e dbt em produção</h3>
+      <ol class="flow mono"><li>origem</li><li>Airflow</li><li>dbt</li><li>destino</li></ol>
       <p>Mantenho DAGs que replicam e publicam dados entre bancos na ordem das dependências, com captura incremental, backfill de chaves ausentes e gravação dos registros pais antes dos filhos. Também extraio indicadores de PDFs semiestruturados e comparo as duas fontes mês a mês no Superset.</p>
       <p class="mono stack">Airflow · dbt · PostgreSQL · ClickHouse · Superset</p>
     </article>
-    <article class="card">
+    <article class="card c5">
       <p class="mono kind">devops / ci-cd</p>
       <h3>Entrega contínua numa esteira institucional</h3>
+      <ol class="flow mono"><li>Jenkins</li><li>Harbor</li><li>Semaphore</li><li>Docker Swarm</li></ol>
       <p>Publico meus serviços pela esteira de CI/CD que a equipe já mantém. O Jenkins monta e testa a imagem, o Harbor guarda as versões, o Semaphore faz o deploy no Docker Swarm e o Portainer mostra o estado dos serviços. Os segredos ficam no Vault, as migrações rodam antes da aplicação e um health check confere cada subida.</p>
       <p class="mono stack">Jenkins · Harbor · Semaphore · Docker Swarm · Portainer · Vault</p>
     </article>
-    <article class="card">
+    <article class="card c7">
       <p class="mono kind">ia / fork de projeto open source</p>
       <h3>Chat Infinito, um fork do UniiChat</h3>
+      <ol class="flow mono"><li>conversa</li><li>resumos</li><li>árvore</li><li>busca exata</li></ol>
       <p>O UniiChat, de Victor Taelin, é um chat que não termina: guarda a conversa inteira numa árvore de resumos e reabre os trechos antigos quando precisa. No meu fork, troquei as chaves de API pelas assinaturas Claude e ChatGPT, chamando os clientes oficiais <code>claude</code> e <code>codex</code>. O Codex gera os resumos em lote e, quando um plano bate o limite, outro modelo assume. Acrescentei busca exata no histórico, uma regra que mantém links e números nos resumos e o uso real das assinaturas na tela.</p>
       <p class="mono stack">TypeScript · Bun · Claude Code · Codex CLI · MCP</p>
       <a class="link" href="https://github.com/VictorTaelin/uniichat" target="_blank" rel="noopener">UniiChat original no GitHub
         <svg class="i" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
     </article>
-    <article class="card">
+    <article class="card c12">
       <p class="mono kind">bi / open source</p>
       <h3>Dashboard analítico em Power BI</h3>
+      <ol class="flow mono"><li>Northwind</li><li>PostgreSQL</li><li>Power BI</li></ol>
       <p>Montei um dashboard em Power BI sobre a base Northwind no PostgreSQL, com vendas, receita por produto, estoque e ticket médio.</p>
       <p class="mono stack">Power BI · PostgreSQL</p>
       <a class="link" href="https://github.com/pjuliusl/FirstReport" target="_blank" rel="noopener">Código no GitHub
@@ -156,7 +169,7 @@
 </section>
 
 <section id="experiencia" class="split">
-  <h2>Experiência</h2>
+  <div class="sec-h"><p class="step mono"><i class="ck"></i>step-03</p><h2>Experiência</h2></div>
   <div>
     <ol class="timeline">
       <li><span class="mono when">jul 2025 – atual</span><div><h3>Analista de Dados · Polícia Civil do Ceará (CTI)</h3><p>Terceirizado. Mantenho DAGs Airflow e transformações dbt em produção, integro assistentes MCP ao Superset e treino, avalio e coloco em revisão humana modelos de IA.</p></div></li>
@@ -175,7 +188,7 @@
 
 <section id="contato" class="contact">
   <div>
-    <h2>Contato</h2>
+    <div class="sec-h"><p class="step mono"><i class="ck"></i>step-04</p><h2>Contato</h2></div>
     <p>Escreva se quiser conversar sobre IA aplicada, MLOps ou engenharia de dados.</p>
   </div>
   <div class="cta">
