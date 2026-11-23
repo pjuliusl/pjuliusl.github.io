@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pedro Julius Lemos dos Santos · Resume</title>
+<meta name="author" content="Pedro Julius Lemos dos Santos">
+<link rel="stylesheet" href="cv.css">
+</head>
+<body>
+<header>
+  <h1>PEDRO JULIUS LEMOS DOS SANTOS</h1>
+  <p class="role">AI Engineer</p>
+  <p class="sub">Machine Learning, Deep Learning, Data Engineering and Analytics</p>
+  <p class="contact">Fortaleza, Ceará, Brazil | +55 (85) 98553-6293 | pdrjuliusls@gmail.com</p>
+  <p class="contact"><a href="https://pedrojulius.tech/en/">pedrojulius.tech</a> | <a href="https://linkedin.com/in/pedro-julius">linkedin.com/in/pedro-julius</a> | <a href="https://github.com/pjuliusl">github.com/pjuliusl</a></p>
+</header>
+
+<h2>Summary</h2>
+<p>Applied AI and data professional working as a Data Analyst for the Civil Police of Ceará, Brazil. I build production pipelines, analytical models and integrations between AI applications and data tools, using Python, SQL, Airflow and dbt, plus MCP, LoRA fine-tuning and model evaluation with MLflow. My work covers data quality and traceability, automated testing and human review of AI answers.</p>
+
+<h2>Technical skills</h2>
+<div class="skills">
+<p><b>AI and MLOps:</b> PyTorch, Transformers, PEFT/LoRA, MLflow, LiteLLM, MCP, fine-tuning, model evaluation and calibration.</p>
+<p><b>Data engineering:</b> Python, SQL, Apache Airflow, dbt, PostgreSQL, ClickHouse, ETL/ELT pipelines, data validation and quality.</p>
+<p><b>Analytics and BI:</b> Apache Superset, Power BI, data modeling, operational metrics and results analysis.</p>
+<p><b>Development and delivery:</b> FastAPI, Pydantic, SQLAlchemy, Alembic, pytest, Git, Docker, Jenkins and training Jobs on Kubernetes/K3s.</p>
+<p><b>Secure integrations:</b> REST APIs, OAuth2/OIDC, JWT, access control, CSRF protection and Redis/Sentinel sessions.</p>
+</div>
+
+<h2>Experience</h2>
+<div class="item">
+<h3>IT Department, Civil Police of Ceará (PCCE)</h3>
+<p class="meta">Data Analyst | contractor | Jul 2025 - present</p>
+<ul>
+<li>Design and maintain Airflow DAGs and dbt transformations on SQL, PostgreSQL and ClickHouse, investigating failures and improving production pipelines.</li>
+<li>Fixed an incremental-capture gap that left changes to old records out of the target database, and confirmed the result in the final database.</li>
+<li>Built extraction of metrics from semi-structured PDFs in Python/Airflow, with validation, traceability and a monthly comparison of two sources in Superset dashboards.</li>
+<li>Build MCP integrations for Superset and tooling for training, evaluating and human review of AI models.</li>
+</ul>
+</div>
+<div class="item">
+<h3>iREDE (Institute for Management, Technology Networks and Energy)</h3>
+<p class="meta">Project Assistant | Oct 2024 - Jun 2025</p>
+<ul><li>Tracked deliveries and wrote technical documentation for projects.</li></ul>
+<p class="meta">Android Development Teaching Assistant | Oct 2023 - Dec 2024</p>
+<ul><li>Prepared hands-on classes and Kotlin learning tracks, and mentored beginners building Android apps.</li></ul>
+</div>
+<div class="item">
+<h3>Maria Bezerra Quevedo Municipal School</h3>
+<p class="meta">IT Support Intern | Aug 2022 - Feb 2023</p>
+<ul><li>Supported the computer lab: software installation, equipment maintenance, Chromebook operation and reports.</li></ul>
+</div>
+
+<h2>Applied AI and Machine Learning projects</h2>
+<div class="item">
+<h3>MCP integration with Apache Superset | PCCE</h3>
+<ul>
+<li>Delivered the base of a Python MCP Host/Client that connects an analytics assistant to Superset, with authentication, sessions and tool catalog validation.</li>
+<li>Contributed to the Superset MCP runtime: JWT/JWKS validation, scopes and restriction to authorized tools, with tests for authentication and integration contracts.</li>
+<li>Built the in-dashboard chat bootstrap with CSRF protection and access checks. Isolated sessions and nonces per user, session and tab, using Redis with expiry and atomic operations.</li>
+<li>Added Redis Sentinel support and container secret loading. Set up Jenkins builds, smoke tests and image publishing to Harbor.</li>
+</ul>
+</div>
+<div class="item">
+<h3>Fine-tuning and evaluation of decision models | PCCE</h3>
+<ul>
+<li>Built a LoRA fine-tuning pipeline for structured four-class classification with PyTorch, Transformers and PEFT on a pretrained language model.</li>
+<li>Prepared training, validation, calibration and final test sets grouped by record, so no record leaks across splits and the evaluation stays independent.</li>
+<li>Set up GPU training Jobs on Kubernetes/K3s with pinned dependency images, checkpoints, resume and controlled interruption.</li>
+<li>Integrated MLflow to log parameters, metrics and version references, while keeping record content out of logs and experiment tracking.</li>
+<li>Implemented evaluation by macro-F1, balanced accuracy and per-class precision and recall, plus checkpoint selection rules that cap severe errors and support calibration.</li>
+<li>Built weight export with training/serving parity checks, release identification and candidate preparation for evaluation before production.</li>
+</ul>
+</div>
+<div class="item">
+<h3>Human review platform for AI answers | PCCE</h3>
+<ul>
+<li>Built supervised review apps with FastAPI, SQLAlchemy, PostgreSQL and Alembic: work queue, drafts, written reasons and decision history.</li>
+<li>Implemented blind review comparing model and analyst answers, with separate access roles and review flows protected by authentication and CSRF.</li>
+<li>Built dashboards for agreement, severe errors, coverage and confidence, plus operational metrics for volume, failures and latency.</li>
+<li>Added review import, results export and automated tests, and used simulated data to validate the flows before going live.</li>
+</ul>
+</div>
+<div class="item">
+<h3>Chat Infinito, a fork of UniiChat | Personal project</h3>
+<ul>
+<li>Adapted UniiChat, Victor Taelin's open source chat that keeps the whole conversation in a tree of summaries, to run on Claude and ChatGPT subscriptions through the official command-line clients instead of API keys.</li>
+<li>Implemented batched summaries through Codex, model fallback when a plan hits its limit, exact search over the history and a rule that keeps links and numbers in summaries, with end-to-end tests.</li>
+<li>Added live subscription usage, isolation between integrations and a systemd service for daily use. Stack: TypeScript, Bun, MCP.</li>
+</ul>
+</div>
+
+<h2>Data and automation projects</h2>
+<div class="item">
+<h3>Power BI analytics dashboard | Portfolio</h3>
+<ul>
+<li>Built a Power BI dashboard on PostgreSQL with the Northwind sample database, analyzing sales, revenue by product, stock and average ticket.</li>
+<li>Organized the metrics for exploring results and comparing products in a sample business scenario.</li>
+</ul>
+</div>
+
+<h2>Education</h2>
+<div class="item">
+<h3>B.Eng. in Telecommunications Engineering</h3>
+<p class="meta">Federal Institute of Ceará (IFCE) | Jul 2023 - expected Jul 2028</p>
+<p>Undergraduate degree in progress, focused on telecommunications systems.</p>
+</div>
+<div class="item">
+<h3>Technical High School Diploma in Computing</h3>
+<p class="meta">Federal Institute of Ceará (IFCE) | Jul 2018 - Jul 2022 | Completed</p>
+<p>Technical computing program integrated with high school.</p>
+</div>
+
+<h2>Additional training</h2>
+<div class="item">
+<h3>Introduction to Android Development</h3>
+<p>Fundamentals of Android mobile app development.</p>
+<h3>Starting a Front-end Developer Career</h3>
+<p>Fundamentals of web interface development.</p>
+</div>
+
+<h2>Languages</h2>
+<p>Portuguese: Native.</p>
+<p>English: EF SET 82/100, C2 Proficient.</p>
+</body>
+</html>

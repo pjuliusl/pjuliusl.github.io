@@ -1,0 +1,18 @@
+@page{size:Letter;margin:16mm 17mm 16mm}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:10.2pt/1.38 "Liberation Sans",Arial,Helvetica,sans-serif;color:#1d2129}
+header{text-align:center;margin-bottom:10pt}
+h1{font-size:17pt;letter-spacing:.06em;font-weight:700}
+.role{font-size:11pt;font-weight:700;margin-top:2pt}
+.sub{font-size:10pt;margin-top:1pt}
+.contact{font-size:9.5pt;margin-top:3pt;color:#3a4150}
+.contact a{color:inherit;text-decoration:none}
+h2{font-size:11.5pt;font-weight:700;color:#1f3a5f;border-bottom:.8pt solid #1f3a5f;padding-bottom:1.5pt;margin:11pt 0 5pt;break-after:avoid}
+h3{font-size:10.2pt;font-weight:700;margin-top:6pt;break-after:avoid}
+.meta{font-style:italic;color:#3a4150;break-after:avoid}
+ul{margin:2pt 0 0 13pt}
+li{margin-top:1.5pt}
+.item{break-inside:avoid}
+p{margin-top:2pt}
+.skills p{margin-top:2.5pt}
+b{font-weight:700}

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Pedro Julius Lemos dos Santos · Currículo</title>
+<meta name="author" content="Pedro Julius Lemos dos Santos">
+<link rel="stylesheet" href="cv.css">
+</head>
+<body>
+<header>
+  <h1>PEDRO JULIUS LEMOS DOS SANTOS</h1>
+  <p class="role">Engenheiro de IA | AI Engineer</p>
+  <p class="sub">Machine Learning, Deep Learning e Engenharia e Análise de Dados</p>
+  <p class="contact">Fortaleza, Ceará, Brasil | +55 (85) 98553-6293 | pdrjuliusls@gmail.com</p>
+  <p class="contact"><a href="https://pedrojulius.tech">pedrojulius.tech</a> | <a href="https://linkedin.com/in/pedro-julius">linkedin.com/in/pedro-julius</a> | <a href="https://github.com/pjuliusl">github.com/pjuliusl</a></p>
+</header>
+
+<h2>Perfil profissional</h2>
+<p>Profissional de IA aplicada e dados, com atuação como Analista de Dados na Polícia Civil do Ceará. Desenvolvo pipelines em produção, modelos analíticos e integrações entre aplicações de IA e ferramentas de dados. Atuo com Python, SQL, Airflow e dbt, além de MCP, fine-tuning com LoRA e avaliação de modelos com MLflow. Minha experiência inclui qualidade e rastreabilidade de dados, testes automatizados e revisão humana de respostas de IA.</p>
+
+<h2>Competências técnicas</h2>
+<div class="skills">
+<p><b>IA e MLOps:</b> PyTorch, Transformers, PEFT/LoRA, MLflow, LiteLLM, MCP, fine-tuning, avaliação e calibração de modelos.</p>
+<p><b>Engenharia de dados:</b> Python, SQL, Apache Airflow, dbt, PostgreSQL, ClickHouse, pipelines ETL/ELT, validação e qualidade de dados.</p>
+<p><b>Analytics e BI:</b> Apache Superset, Power BI, modelagem de dados, indicadores operacionais e análise de resultados.</p>
+<p><b>Desenvolvimento e entrega:</b> FastAPI, Pydantic, SQLAlchemy, Alembic, pytest, Git, Docker, Jenkins e Jobs de treinamento em Kubernetes/K3s.</p>
+<p><b>Integrações seguras:</b> APIs REST, OAuth2/OIDC, JWT, controle de acesso, proteção CSRF e sessões com Redis/Sentinel.</p>
+</div>
+
+<h2>Experiência profissional</h2>
+<div class="item">
+<h3>Coordenadoria de Tecnologia e Informação da Polícia Civil do Ceará</h3>
+<p class="meta">Analista de Dados | atuação terceirizada | jul. 2025 - atual</p>
+<ul>
+<li>Projeto e mantenho DAGs no Airflow e transformações com dbt, SQL, PostgreSQL e ClickHouse, investigando falhas e evoluindo pipelines em produção.</li>
+<li>Corrigi uma lacuna de captura incremental que deixava alterações em registros antigos fora do destino e confirmei o resultado no banco final.</li>
+<li>Implementei extração de indicadores de PDFs semiestruturados em Python/Airflow, com validação, rastreabilidade e comparação mensal de duas fontes em painéis Superset.</li>
+<li>Desenvolvo integrações MCP para o Superset e soluções de treinamento, avaliação e revisão humana de modelos de IA.</li>
+</ul>
+</div>
+<div class="item">
+<h3>iREDE — Instituto de Gestão, Redes Tecnológicas e Energias</h3>
+<p class="meta">Assistente de Projetos | out. 2024 - jun. 2025</p>
+<ul><li>Acompanhei entregas e produzi documentação técnica de projetos.</li></ul>
+<p class="meta">Monitor de Desenvolvimento Android | out. 2023 - dez. 2024</p>
+<ul><li>Preparei aulas práticas e trilhas de Kotlin e acompanhei alunos iniciantes no desenvolvimento de aplicações Android.</li></ul>
+</div>
+<div class="item">
+<h3>Escola Municipal Maria Bezerra Quevedo</h3>
+<p class="meta">Estagiário de Suporte de TI | ago. 2022 - fev. 2023</p>
+<ul><li>Prestei suporte na sala de informática, com instalação de software, manutenção de equipamentos, operação de Chromebooks e elaboração de relatórios.</li></ul>
+</div>
+
+<h2>Projetos em IA aplicada e Machine Learning</h2>
+<div class="item">
+<h3>Integração MCP com Apache Superset | PCCE</h3>
+<ul>
+<li>Entreguei a fundação de um MCP Host/Client em Python para integrar um assistente analítico ao Superset, com autenticação, sessões e validação do catálogo de ferramentas.</li>
+<li>Contribuí com o runtime MCP do Superset, incluindo validação JWT/JWKS, escopos e restrição das ferramentas autorizadas, com testes de autenticação e dos contratos de integração.</li>
+<li>Implementei a inicialização do chat no dashboard com proteção CSRF e validação de acesso. Separei sessões e nonces por usuário, sessão e aba, usando Redis com expiração e operações atômicas.</li>
+<li>Adicionei suporte a Redis Sentinel e leitura de segredos em containers. Preparei builds e smoke tests no Jenkins e publicação de imagens no Harbor.</li>
+</ul>
+</div>
+<div class="item">
+<h3>Fine-tuning e avaliação de modelos de decisão | PCCE</h3>
+<ul>
+<li>Implementei um pipeline de fine-tuning LoRA para classificação estruturada em quatro categorias, usando PyTorch, Transformers e PEFT sobre um modelo de linguagem pré-treinado.</li>
+<li>Preparei conjuntos de treino, validação, calibração e teste final, com agrupamento por registro para evitar contaminação entre partições e preservar a avaliação independente.</li>
+<li>Preparei Jobs de treinamento em GPU no Kubernetes/K3s, com imagens de dependências fixadas, checkpoints, retomada de execução e controle de interrupção do treinamento.</li>
+<li>Integrei MLflow para registrar parâmetros, métricas e referências de versão. Mantive o conteúdo dos registros fora dos logs e do rastreamento de experimentos.</li>
+<li>Implementei avaliação por macro-F1, acurácia balanceada, precisão e recall por classe, além de critérios de seleção de checkpoints que limitam erros graves e apoiam a calibração.</li>
+<li>Desenvolvi exportação dos pesos com verificações de paridade entre treinamento e inferência, identificação da release e preparação de candidatos para avaliação antes da produção.</li>
+</ul>
+</div>
+<div class="item">
+<h3>Plataforma de revisão humana de respostas de IA | PCCE</h3>
+<ul>
+<li>Desenvolvi aplicações de revisão supervisionada com FastAPI, SQLAlchemy, PostgreSQL e Alembic, com fila de trabalho, rascunhos, justificativas e rastreabilidade das decisões.</li>
+<li>Implementei revisão cega e comparação entre respostas de modelos e analistas, separando perfis de acesso e protegendo os fluxos de revisão com autenticação e CSRF.</li>
+<li>Construí painéis de concordância, erros graves, cobertura e confiança, além de indicadores operacionais de volume, falhas e latência para acompanhar a avaliação dos modelos.</li>
+<li>Adicionei importação de revisões, exportação de resultados e testes automatizados. Estruturei o uso de dados simulados para validar os fluxos antes da integração operacional.</li>
+</ul>
+</div>
+<div class="item">
+<h3>Chat Infinito, fork do UniiChat | Projeto pessoal</h3>
+<ul>
+<li>Adaptei o UniiChat, chat de código aberto de Victor Taelin que guarda a conversa inteira numa árvore de resumos, para rodar sobre as assinaturas Claude e ChatGPT pelos clientes oficiais de linha de comando, sem chaves de API.</li>
+<li>Implementei resumos em lote pelo Codex, troca de modelo quando um plano atinge o limite, busca exata no histórico e uma regra que preserva links e números nos resumos, com testes de ponta a ponta.</li>
+<li>Adicionei a exibição do uso real das assinaturas, o isolamento entre integrações e um serviço systemd para uso diário. Stack: TypeScript, Bun, MCP.</li>
+</ul>
+</div>
+
+<h2>Projetos em dados e automação</h2>
+<div class="item">
+<h3>Dashboard analítico em Power BI | Portfólio</h3>
+<ul>
+<li>Desenvolvi um dashboard Power BI conectado ao PostgreSQL usando a base demonstrativa Northwind, com análises de vendas, receita por produto, estoque e ticket médio.</li>
+<li>Organizei os indicadores para exploração dos resultados e comparação de produtos, aplicando visualização de dados a um cenário de negócio demonstrativo.</li>
+</ul>
+</div>
+
+<h2>Formação acadêmica</h2>
+<div class="item">
+<h3>Bacharelado em Engenharia de Telecomunicações</h3>
+<p class="meta">Instituto Federal do Ceará — IFCE | jul. 2023 - conclusão prevista em jul. 2028</p>
+<p>Graduação em andamento na área de sistemas de telecomunicações.</p>
+</div>
+<div class="item">
+<h3>Técnico Integrado em Informática</h3>
+<p class="meta">Instituto Federal do Ceará — IFCE | jul. 2018 - jul. 2022 | Concluído</p>
+<p>Formação técnica em informática integrada ao ensino médio.</p>
+</div>
+
+<h2>Formação complementar</h2>
+<div class="item">
+<h3>Introdução ao Desenvolvimento Android</h3>
+<p>Fundamentos do desenvolvimento de aplicações móveis Android.</p>
+<h3>Iniciando a carreira de desenvolvedor Front-end</h3>
+<p>Fundamentos para o desenvolvimento de interfaces web.</p>
+</div>
+
+<h2>Idiomas</h2>
+<p>Português: Nativo.</p>
+<p>Inglês: EF SET 82/100 — C2 Proficient.</p>
+</body>
+</html>
