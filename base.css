@@ -1,0 +1,62 @@
+/* Base: fonte Departure Mono (SIL OFL 1.1, fonts/DepartureMono-OFL.txt) e paleta noite azul / jade */
+@font-face{font-family:"Departure Mono";src:url("fonts/DepartureMono-Regular.woff2") format("woff2");font-display:swap}
+:root{
+  --deep:#05070d;--bg:#080b14;--card:#0d1220;--raised:#151c2e;
+  --line:rgba(214,226,255,.08);--line2:rgba(214,226,255,.16);
+  --t1:#e7ecf6;--t2:#a0aac0;--t3:#717c95;
+  --ac:#3fe0c5;--ac-ink:#03140f;--ac-dim:rgba(63,224,197,.14);--ac-sh:#0b5e52;
+  --ease:cubic-bezier(.22,1,.36,1);
+  --sans:"Geist",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --px:"Departure Mono","Geist Mono",ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--t1);font:400 15px/24px var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+code{font-family:var(--mono);font-size:.9em;padding:1px 4px;border-radius:3px;background:var(--raised)}
+
+.btn{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 16px;font:11px/16px var(--px);text-transform:uppercase;letter-spacing:.05em;text-decoration:none;color:var(--ac-ink);background:var(--ac);box-shadow:3px 3px 0 var(--ac-sh);transition:transform .1s,box-shadow .1s}
+.btn:hover{transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ac-sh)}
+.btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ac-sh)}
+.btn.g{color:var(--t1);background:var(--raised);box-shadow:3px 3px 0 #02040a,inset 0 0 0 1px var(--line2)}
+.btn.g:hover{box-shadow:4px 4px 0 #02040a,inset 0 0 0 1px var(--t3)}
+
+.bars{display:inline-flex;gap:3px}
+.bars i{width:12px;height:12px;background:var(--raised)}
+.bars i.on{background:var(--ac)}
+
+.flow{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin:20px 0;font:11px/16px var(--px)}
+.flow li{position:relative;padding:6px 10px;border:1px solid var(--line2);color:var(--t2)}
+.flow li:not(:last-child)::after{content:"";position:absolute;right:-17px;top:50%;width:12px;height:2px;margin-top:-1px;background:var(--ac)}
+.stack{font:12px/18px var(--mono);color:var(--t3)}
+
+.chart{margin-top:22px;border:1px solid var(--line2);padding:14px 14px 10px;background:var(--deep)}
+.chart svg{display:block;width:100%;height:auto}
+.chart path{fill:none}
+.chart text{fill:var(--t3);font:11px var(--px)}
+.chart .gl{stroke:var(--line)}
+.chart .ax{stroke:var(--line2)}
+.chart .base{stroke:var(--t3);stroke-dasharray:4 4}
+.chart .pick-l{stroke:var(--ac);stroke-dasharray:2 4;opacity:.6}
+.chart .ft{stroke:var(--ac);stroke-width:3}
+.chart .sp{fill:var(--deep);stroke:var(--ac);stroke-width:2}
+.chart .sp.pick,.chart .cur,.chart .pick-t{fill:var(--ac)}
+.chart figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;margin-top:8px;font:11px/16px var(--px);color:var(--t3);text-transform:uppercase}
+
+.obj{list-style:none;display:grid;gap:6px;margin-top:18px}
+.obj li{display:flex;gap:10px;align-items:center;font-size:14px;line-height:20px;color:var(--t2)}
+.obj li i{flex:none;width:12px;height:12px;background:var(--ac);box-shadow:inset 0 0 0 3px var(--deep),0 0 0 1px var(--ac)}
+
+.bag+.bag{margin-top:18px}
+.bag .k{font:11px/16px var(--px);color:var(--t3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:8px}
+.slots{display:flex;flex-wrap:wrap;gap:6px}
+.slots span{padding:8px 11px;border:2px solid var(--line2);background:var(--card);font:500 13px/18px var(--sans);color:var(--t1)}
+.bag.dim .slots span{color:var(--t2);border-style:dashed;background:none}
+
+.lk{font:11px/16px var(--px);color:var(--ac);text-transform:uppercase;letter-spacing:.05em;text-decoration:none}
+.lk:hover{text-decoration:underline}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@keyframes in{from{opacity:0;transform:translateY(6px)}}
+@keyframes blink{50%{opacity:0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}

@@ -5,32 +5,32 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Fase não encontrada · Pedro Julius</title>
 <meta name="robots" content="noindex">
+<meta name="theme-color" content="#03050a">
 <link rel="preload" href="/fonts/DepartureMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
-<link rel="stylesheet" href="/style.css">
+<link rel="stylesheet" href="/base.css">
+<link rel="stylesheet" href="/manhwa.css">
+<link rel="icon" href="data:,">
+<style>
+.lost{min-height:100svh;display:grid;place-items:center;padding:96px 24px}
+.lost .sys{margin:0;max-width:560px}
+.lost h1{font:400 44px/44px var(--px);color:var(--t1);margin:4px 0 16px}
+</style>
+<script>document.addEventListener("click",e=>{const a=e.target.closest("[data-lang]");if(a)try{localStorage.setItem("lang",a.dataset.lang)}catch(_){}})</script>
 </head>
 <body>
-<header class="top">
-  <div class="top-in">
-    <a class="logo" href="/">Pedro Julius</a>
-    <div class="lang" role="group" aria-label="Idioma">
-      <a href="/" data-lang="pt">PT</a>
-      <a href="/en/" hreflang="en" lang="en" data-lang="en">EN</a>
-    </div>
-  </div>
+<header class="tb">
+  <span><b>Pedro Julius</b></span>
+  <span class="r"><span class="lg" role="group" aria-label="Idioma"><a href="/" data-lang="pt">PT</a> · <a href="/en/" hreflang="en" lang="en" data-lang="en">EN</a></span></span>
 </header>
-<main>
-<section class="lost">
-  <p class="step px" style="color:var(--ac)">fase 404</p>
-  <h1>Fase não encontrada</h1>
-  <p>Este endereço não leva a lugar nenhum. Pode ter sido um link quebrado, ou só o meu azar de sempre.</p>
-  <p lang="en">This page doesn't exist. Could be a broken link, or just my usual luck.</p>
-  <div class="cta">
-    <a class="btn primary" href="/">▶ Voltar ao início</a>
-    <a class="btn" href="/en/" lang="en">Back to start</a>
-  </div>
-</section>
+<main class="lost">
+  <section class="sys">
+    <div class="h"><span>◆ sistema · erro</span><span>404</span></div>
+    <h1>Fase não encontrada</h1>
+    <p class="tx">Este endereço não leva a lugar nenhum. Pode ter sido um link quebrado, ou só o meu azar de sempre.</p>
+    <p class="tx" lang="en">This page doesn't exist. Could be a broken link, or just my usual luck.</p>
+    <div class="acts"><a class="btn" href="/">◀ Voltar ao início</a><a class="btn g" href="/en/" lang="en">Back to start</a></div>
+  </section>
 </main>
-<footer><span>© 2026 Pedro Julius Lemos dos Santos</span><span class="quote">“Às vezes eu começo uma frase e nem sei aonde ela vai.” <span class="who">Michael Scott</span></span></footer>
 </body>
 </html>
