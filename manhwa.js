@@ -126,6 +126,6 @@ document.querySelectorAll('[data-lang]').forEach(a => a.addEventListener('click'
 addEventListener('scroll', tick, {passive: true}); addEventListener('resize', tick); tick();
 
 if (!matchMedia('(prefers-reduced-motion: reduce)').matches && 'IntersectionObserver' in window) {
-  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin: '0px 0px -12% 0px'});
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), {rootMargin: '0px 0px 15% 0px'});
   document.querySelectorAll('.rv').forEach(el => io.observe(el));
 } else document.querySelectorAll('.rv').forEach(el => el.classList.add('in'));

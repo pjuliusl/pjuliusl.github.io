@@ -93,13 +93,13 @@ body{background:#03050a}
 .qk button:hover,.qk button:focus-visible{background:rgba(63,224,197,.12);outline:0;box-shadow:3px 3px 0 var(--ac)}
 dialog.sys{position:fixed;inset:0;margin:auto;width:min(560px,calc(100% - 32px));max-height:calc(100svh - 64px);overflow:auto;color:var(--t2);padding:18px 22px 22px}
 dialog.sys::backdrop{background:rgba(3,5,10,.72)}
-dialog.sys[open]{animation:pop .12s steps(3)}
+dialog.sys[open]{animation:pop .06s steps(2)}
 @keyframes pop{from{transform:scaleY(.06)}}
 dialog.sys .x{background:none;border:0;padding:0 2px;font:inherit;color:var(--t2);cursor:pointer}
 dialog.sys .x:hover,dialog.sys .x:focus-visible{color:var(--ac);outline:0}
 
-.rv{opacity:0;transform:translateY(14px);transition:opacity .45s var(--ease),transform .45s var(--ease)}
-.sys.rv{transform:scaleY(.06);transform-origin:center;transition:opacity .2s,transform .3s steps(5)}
+.rv{opacity:0;transform:translateY(14px);transition:opacity .18s var(--ease),transform .18s var(--ease)}
+.sys.rv{transform:scaleY(.06);transform-origin:center;transition:opacity .1s,transform .1s steps(2)}
 .rv.in{opacity:1;transform:none}
 
 @media (max-width:1180px){
